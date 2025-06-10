@@ -12,12 +12,11 @@ Adbrix Android SDK collects data on app installs and events to attribute them to
 ### ℹ️ Information
 - Minimum supported SDK : 19 / Android 4.4
 - Compiled Sdk : 34
-- Targeted Sdk : 34
 
 ### 🔗 Dependencies
 
-- [`com.android.installreferrer:installreferrer`](https://developer.android.com/google/play/installreferrer/library) : **Required**
-- [`com.google.android.gms:play-services-ads-identifier`](https://support.google.com/googleplay/android-developer/answer/6048248) : Required only if you want to collect Google ADID(Optional)
+- [`com.android.installreferrer:installreferrer`](https://developer.android.com/google/play/installreferrer/library)
+- [`com.google.android.gms:play-services-ads-identifier`](https://support.google.com/googleplay/android-developer/answer/6048248)
 
 ### 🗄️ Changelog
 
