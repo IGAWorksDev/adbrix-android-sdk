@@ -1,3 +1,23 @@
+## 3.0.3 (2025-06-10)
+<details open>
+ <summary>EN</summary>
+ 
+### Fixed
+
+- Fixed the issue where Double type event properties would be missing when appending `.0` to the end.
+- Fixed the issue where Double type would be missing when inputting `ABEventProperty.ITEM_PRICE` value.
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+### 고쳐짐
+
+- Double 타입 이벤트 속성 끝에 `.0`을 붙일 경우 누락되는 문제를 해결했습니다.
+- `ABEventProperty.ITEM_PRICE` 값에 Double 타입을 입력할 경우 누락되는 문제를 해결했습니다.
+
+</details>
+
 ## 3.0.2 (2025-06-05)
 <details open>
  <summary>EN</summary>
