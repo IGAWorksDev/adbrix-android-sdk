@@ -1,3 +1,25 @@
+## 3.0.4 (2025-06-13)
+<details open>
+ <summary>EN</summary>
+ 
+### Fixed
+
+- Fixed an issue where [installReferrer](https://developer.android.com/google/play/installreferrer) data would be missing if startSession was called before init.
+- Fixed an issue where `last_deeplink_id` would be missing if a deep link open event occurred during a session.
+- Fixed an issue where the endSession event could be called twice if startSession was called during a session.
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+### 고쳐짐
+
+- init 이전에 startSession이 호출 될 경우 [installReferrer 관련 데이터](https://developer.android.com/google/play/installreferrer)가 누락되는 문제를 해결했습니다.
+- 세션 도중 딥링크 오픈 이벤트 발생시 `last_deeplink_id` 데이터가 누락되는 문제를 해결했습니다.
+- 세션 도중 startSession 호출 할 경우 endSession 이벤트가 2번 인입될 수있는 문제를 해결했습니다.
+
+</details>
+
 ## 3.0.3 (2025-06-10)
 <details open>
  <summary>EN</summary>
