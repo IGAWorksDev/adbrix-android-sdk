@@ -11,7 +11,7 @@ Adbrix Android SDK collects data on app installs and events to attribute them to
 
 ### ℹ️ Information
 - Minimum supported SDK : 19 / Android 4.4
-- Compiled Sdk : 34
+- Compiled Sdk : 35
 
 ### 🔗 Dependencies
 
