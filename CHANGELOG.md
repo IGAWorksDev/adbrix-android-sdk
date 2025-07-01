@@ -1,3 +1,29 @@
+## 3.0.5 (2025-07-01)
+<details open>
+ <summary>EN</summary>
+
+### Changed
+
+- compileSdk version changed to 35.
+ 
+### Fixed
+
+- Fixed a timing issue when calling APIs before SDK initialization.
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+### 변경사항
+
+- compileSdk 버전이 35로 변경되었습니다.
+
+### 고쳐짐
+
+- SDK 초기화 전 API 호출 시 드물게 발생하던 타이밍 이슈를 수정했습니다.
+
+</details>
+
 ## 3.0.4 (2025-06-13)
 <details open>
  <summary>EN</summary>
