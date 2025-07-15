@@ -1,3 +1,24 @@
+## 3.0.6 (2025-07-15)
+<details open>
+ <summary>EN</summary>
+ 
+### Fixed
+
+- Enhanced data processing stability by resolving event duplication, omission, and ordering errors that occurred during concurrent API calls in a multi-threaded environment.
+- Fixed a memory leak issue that occurred when using Context during the process of collecting device information.
+
+
+</details>
+<details open>
+ <summary>KO</summary>
+
+### 고쳐짐
+
+- 다중 스레드 환경에서 API 동시 호출 시 발생하던 이벤트 정보의 중복, 누락 및 순서 오류를 해결하여 데이터 처리 안정성을 강화했습니다.
+- 기기 정보를 수집하는 과정에서 Context 사용시 발생하던 메모리 누수 문제를 해결하였습니다.
+
+</details>
+
 ## 3.0.5 (2025-07-01)
 <details open>
  <summary>EN</summary>
