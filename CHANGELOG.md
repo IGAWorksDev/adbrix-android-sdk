@@ -1,6 +1,11 @@
 <details open>
 <summary>EN</summary>
 
+
+## 3.0.7 (2025-09-02)
+
+##### Enhancement
+- Improving Event Collection Stability and Collection Rate
 ## 3.0.6 (2025-07-15)
 
 ### Fixed
@@ -67,6 +72,11 @@
 <details open>
 <summary>KO</summary>
 
+
+## 3.0.7 (2025-09-02)
+
+##### 개선
+- 이벤트 수집 안정성 및 수집률 향상
 ## 3.0.6 (2025-07-15)
 
 ### 고쳐짐
