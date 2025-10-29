@@ -2,10 +2,8 @@ package com.igaworks.adbrixkotlinsample
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.View
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,7 +13,6 @@ import com.igaworks.adbrix.constants.ABEventProperty
 import com.igaworks.dfinerykotlinsample.Utils
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private var deepLinkDialog: AlertDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,30 +25,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.main_button_login).setOnClickListener(this)
         findViewById<View>(R.id.main_button_purchase).setOnClickListener(this)
         findViewById<View>(R.id.main_button_customEvent).setOnClickListener(this)
-
-        showDeepLinkUri(intent)
-        Adbrix.getInstance().blockDeferredDeepLinkLaunch { context, adbrixDeepLink ->
-            runOnUiThread {
-                deepLinkDialog?.let {
-                    it.dismiss()
-                }
-                AlertDialog.Builder(this@MainActivity)
-                    .setTitle("Deferred Deep Link가 수신되었습니다.")
-                    .setMessage(adbrixDeepLink.deepLink)
-                    .show()
-            }
-        }
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        showDeepLinkUri(intent)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        deepLinkDialog = null
     }
 
     override fun onClick(view: View?) {
@@ -92,17 +70,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     .addProperty("custom_property_4", true)
                     .build()
             )
-        }
-    }
-    private fun showDeepLinkUri(intent: Intent?) {
-        if (intent != null && intent.data != null) {
-            val uri = intent.data.toString()
-            if (!TextUtils.isEmpty(uri)) {
-                deepLinkDialog = AlertDialog.Builder(this)
-                    .setTitle("Deep Link가 수신되었습니다.")
-                    .setMessage(uri)
-                    .show()
-            }
         }
     }
 }

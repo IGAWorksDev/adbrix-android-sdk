@@ -1,28 +1,23 @@
 package com.igaworks.adbrixjavasample;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.igaworks.adbrix.Adbrix;
-import com.igaworks.adbrix.AdbrixDeepLink;
-import com.igaworks.adbrix.AdbrixDeferredDeepLinkListener;
 import com.igaworks.adbrix.constants.ABEvent;
 import com.igaworks.adbrix.constants.ABEventProperty;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getCanonicalName();
-    private AlertDialog deepLinkDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,38 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.main_button_login).setOnClickListener(this);
         findViewById(R.id.main_button_purchase).setOnClickListener(this);
         findViewById(R.id.main_button_customEvent).setOnClickListener(this);
-
-        showDeepLinkUri(getIntent());
-        Adbrix.getInstance().blockDeferredDeepLinkLaunch(new AdbrixDeferredDeepLinkListener() {
-            @Override
-            public void onDeferredDeepLinkReceived(Context context, AdbrixDeepLink adbrixDeepLink) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(deepLinkDialog != null){
-                            deepLinkDialog.dismiss();
-                        }
-                        new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Deferred Deep Link가 수신되었습니다.")
-                                .setMessage(adbrixDeepLink.getDeepLink())
-                                .show();
-                    }
-                });
-            }
-        });
     }
 
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        showDeepLinkUri(intent);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        deepLinkDialog = null;
     }
 
     @Override
@@ -101,18 +70,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .addProperty("custom_property_3", "Seoul")
                             .addProperty("custom_property_4", true)
                             .build());
-        }
-    }
-
-    private void showDeepLinkUri(Intent intent){
-        if(intent!=null && intent.getData()!=null){
-            String uri = intent.getData().toString();
-            if(!TextUtils.isEmpty(uri)){
-                deepLinkDialog = new AlertDialog.Builder(this)
-                        .setTitle("Deep Link가 수신되었습니다.")
-                        .setMessage(uri)
-                        .show();
-            }
         }
     }
 }

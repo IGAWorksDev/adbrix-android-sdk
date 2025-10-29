@@ -1,11 +1,9 @@
 package com.igaworks.adbrixhybridappsample;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.webkit.ConsoleMessage;
@@ -16,20 +14,14 @@ import android.webkit.WebViewClient;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.igaworks.adbrix.Adbrix;
-import com.igaworks.adbrix.AdbrixDeepLink;
-import com.igaworks.adbrix.AdbrixDeferredDeepLinkListener;
-
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getCanonicalName();
     private static final String JAVASCRIPT_INTERFACE_NAME = "adbrixWebBridge";
-    private AlertDialog deepLinkDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,32 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.main_webView);
         initWebView(webView);
-        showDeepLinkUri(getIntent());
-        Adbrix.getInstance().blockDeferredDeepLinkLaunch(new AdbrixDeferredDeepLinkListener() {
-            @Override
-            public void onDeferredDeepLinkReceived(Context context, AdbrixDeepLink adbrixDeepLink) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(deepLinkDialog != null){
-                            deepLinkDialog.dismiss();
-                        }
-                        Log.i(TAG, "deferred deep link is received. uri:"+adbrixDeepLink.getDeepLink());
-                        new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Deferred Deep Link가 수신되었습니다.")
-                                .setMessage(adbrixDeepLink.getDeepLink())
-                                .show();
-                    }
-                });
-            }
-        });
     }
 
     @Override
     protected void onNewIntent(@NonNull Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        showDeepLinkUri(intent);
     }
 
     @Override
@@ -84,12 +56,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         WebView webView = findViewById(R.id.main_webView);
         webView.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        deepLinkDialog = null;
     }
 
     private void initWebView(WebView webView){
@@ -143,18 +109,5 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
         webView.addJavascriptInterface(new AdbrixJavascriptInterface(), JAVASCRIPT_INTERFACE_NAME);
         webView.loadUrl("file:///android_asset/index.html");
-    }
-
-    private void showDeepLinkUri(Intent intent){
-        if(intent!=null && intent.getData()!=null){
-            String uri = intent.getData().toString();
-            if(!TextUtils.isEmpty(uri)){
-                Log.i(TAG, "deep link is received. uri:"+uri);
-                deepLinkDialog = new AlertDialog.Builder(this)
-                        .setTitle("Deep Link가 수신되었습니다.")
-                        .setMessage(uri)
-                        .show();
-            }
-        }
     }
 }
