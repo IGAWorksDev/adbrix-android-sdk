@@ -19,7 +19,6 @@
             box-sizing: border-box;
         }
     </style>
-    <!--html에 script를 추가하는 방법-->
     <script src="./adbrix-bridge.js" defer></script>
     <script>
         function Login() {
@@ -54,7 +53,7 @@
             const param = new PropertiesBuilder()
                 .items(items)
                 .orderId("주문번호")
-                .paymentMethod("BankTransfer")
+                .paymentMethod(ABPaymentMethod.BANK_TRANSFER)
                 .orderSales(25500.0)
                 .deliveryCharge(3000.0)
                 .discount(0.0)
