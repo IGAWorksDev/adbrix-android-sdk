@@ -2,6 +2,11 @@
 <summary>EN</summary>
 
 
+
+## 3.0.8 (2025-11-21)
+
+##### Notes
+- Event sampling now applies to all events.
 ## 3.0.7 (2025-09-02)
 
 ##### Enhancement
@@ -73,6 +78,11 @@
 <summary>KO</summary>
 
 
+
+## 3.0.8 (2025-11-21)
+
+##### 주요 사항
+- 이벤트 샘플링이 모든 이벤트에 적용되도록 변경되었습니다.
 ## 3.0.7 (2025-09-02)
 
 ##### 개선
