@@ -3,6 +3,11 @@
 
 
 
+
+## 3.0.9 (2026-01-30)
+
+##### Notes
+- Standardized inconsistent log structures and messages across all platforms into a single format.
 ## 3.0.8 (2025-11-21)
 
 ##### Notes
@@ -79,6 +84,11 @@
 
 
 
+
+## 3.0.9 (2026-01-30)
+
+##### 주요 사항
+- 플랫폼별로 상이했던 로그 구조와 메시지가 통일된 규격으로 변경되었습니다.
 ## 3.0.8 (2025-11-21)
 
 ##### 주요 사항
