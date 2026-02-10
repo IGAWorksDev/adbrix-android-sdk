@@ -4,6 +4,13 @@
 
 
 
+
+## 3.0.10 (2026-02-10)
+
+##### Fixed
+- Fixed an issue in Unity where float values (e.g., 100.0) were incorrectly converted to integers, causing event attributes to be dropped.
+- Resolved a NullPointerException that occurred in unit test environments when null values were passed as inputs.
+- Fixed an intermittent issue where queued events were excluded from transmission during consecutive event calls.
 ## 3.0.9 (2026-01-30)
 
 ##### Notes
@@ -85,6 +92,13 @@
 
 
 
+
+## 3.0.10 (2026-02-10)
+
+##### 고쳐짐
+- Unity에서 100.0과 같은 실수형 데이터가 정수형으로 변환되어 이벤트 속성에서 누락되던 타입을 수정하였습니다.
+- 유닛 테스트 환경에서 null 값이 입력될 경우 NullPointerException이 발생하던 문제를 해결하였습니다.
+- 연속적인 이벤트 발생 시, 메모리 큐에 대기 중인 이벤트가 발송 대상에서 간헐적으로 누락되던 문제를 해결하였습니다.
 ## 3.0.9 (2026-01-30)
 
 ##### 주요 사항
