@@ -5,6 +5,23 @@
 
 
 
+
+## 4.0.0 (2026-09-03)
+
+##### Added
+- App Set ID Support (Required Dependency)
+    - Added Google Play Services App Set ID collection.
+    - App Set ID is a privacy-preserving identifier for cross-app user identification within the same developer account.
+    - App Set ID is now included in event common identity payload.
+    - ⚠️ Breaking Change: com.google.android.gms:play-services-appset dependency is now required.
+    - SDK initialization will halt if this dependency is missing.
+
+##### Fixed
+- blockDeferredDeepLinkLaunch now works correctly when called before SDK initialization.
+
+##### Enhancement
+- Background & multi-thread stability
+    - Enhanced thread-safety in internal data processing to ensure reliable event transmission under high-concurrency async environments.
 ## 3.0.10 (2026-02-10)
 
 ##### Fixed
@@ -93,6 +110,23 @@
 
 
 
+
+## 4.0.0 (2026-09-03)
+
+##### 추가됨
+- App Set ID 지원 (필수 의존성 추가)
+    - Google Play Services App Set ID 수집 기능이 추가되었습니다.
+    - App Set ID는 동일 개발사의 앱 간 사용자 식별에 활용되는 프라이버시 보호 식별자입니다.
+    - 이벤트 전송 시 공통 신원 정보에 App Set ID가 포함됩니다.
+    - ⚠️ 주요 변경: com.google.android.gms:play-services-appset 의존성이 필수로 변경되었습니다.
+    - 해당 의존성이 누락된 경우 SDK 초기화가 중단됩니다.
+
+##### 고쳐짐
+- SDK init 전 blockDeferredDeepLinkLaunch 호출시 미작동하던 문제가 해결되었습니다.
+
+##### 개선
+- 백그라운드 및 멀티스레드 환경 안정화
+    - SDK 내부 데이터 처리 구조의 동기화(Thread-Safety)를 강화하여, 고성능 비동기 환경에서도 데이터가 끊김 없이 안전하게 전송되도록 개선했습니다.
 ## 3.0.10 (2026-02-10)
 
 ##### 고쳐짐
