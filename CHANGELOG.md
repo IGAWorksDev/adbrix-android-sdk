@@ -6,6 +6,11 @@
 
 
 
+
+## 4.0.1 (2026-09-11)
+
+##### Fixed
+- Fixed an issue where deeplink attribution failed when the app was opened via App Links while in the foreground.
 ## 4.0.0 (2026-09-03)
 
 ##### Added
@@ -111,6 +116,11 @@
 
 
 
+
+## 4.0.1 (2026-09-11)
+
+##### 고쳐짐
+- 포그라운드 상태에서 앱 링크를 통한 딥링크 오픈 시 성과 측정이 정상 동작하지 않던 문제를 수정하였습니다.
 ## 4.0.0 (2026-09-03)
 
 ##### 추가됨
