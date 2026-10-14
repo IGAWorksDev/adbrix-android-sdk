@@ -7,6 +7,14 @@
 
 
 
+
+## 4.1.0 (2026-10-14)
+
+##### Changed
+- Changed Daily First Open criteria (UTC → Device Local Timezone)
+
+##### Enhancement
+- Enhanced event collection stability
 ## 4.0.1 (2026-09-11)
 
 ##### Fixed
@@ -117,6 +125,14 @@
 
 
 
+
+## 4.1.0 (2026-10-14)
+
+##### 변경됨
+- Daily First Open 판단 기준 변경 (UTC → 디바이스 로컬 타임존)
+
+##### 개선
+- 이벤트 수집 안정성 강화
 ## 4.0.1 (2026-09-11)
 
 ##### 고쳐짐
