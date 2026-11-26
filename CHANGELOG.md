@@ -8,6 +8,18 @@
 
 
 
+
+## 4.1.1 (2026-11-26)
+
+##### Security
+- Enhanced Background Service Security
+    - Strengthened internal component access control
+- Logging Policy Changes
+    - Default value changed to `false`, `log.level` changed to `Log.ERROR`
+
+##### Enhancement
+- SDK initialization performance enhancement
+    - Optimized internal processing logic
 ## 4.1.0 (2026-10-14)
 
 ##### Changed
@@ -126,6 +138,18 @@
 
 
 
+
+## 4.1.1 (2026-11-26)
+
+##### 보안
+- 백그라운드 서비스 보안 강화
+    - 내부 컴포넌트 접근 제어 강화
+- 로깅 정책 변경
+    - 기본값 `false`, 로그 레벨 `Log.ERROR`로 변경
+
+##### 개선
+- SDK 초기화 성능 향상
+    - 내부 처리 로직 최적화
 ## 4.1.0 (2026-10-14)
 
 ##### 변경됨
